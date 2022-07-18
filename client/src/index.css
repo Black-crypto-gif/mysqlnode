@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(0, 0, 0);
+  position: relative;
+  transition: 0.9s;
+}
+
+/*
+  * STYLE THE NAVIGATION BAR :
+*/
+
+header{
+  background-color: #006c54;
+  height: 3.8rem;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.logo{
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  padding: .3rem;
+  transition: 0.5s;
+}
+.logo:hover{
+  color: rgb(255, 230, 0);
+}
+.btn{
+  width: 100px;
+  height: 35px;
+  margin-right: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-logo{
+  margin-right: 1.5rem;
+}
+
+/*
+style the form 
+*/
+
+.landing-form{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2.5rem;
+  place-items: center;
+  gap: 2rem;
+}
+
+.form-image{
+  width: 100%;
+  border-radius: 6px;
+  filter: drop-shadow(5px 10px 5px #006c54);
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-title{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5rem;
+  max-width: 1400px;
+}
+form{
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  background-color: #00c499;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: bolder;
+
+}
+/* label, input {
+  display: block;
+} */
+input {
+  font-weight: bolder;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+label {
+  font-weight: bolder;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
