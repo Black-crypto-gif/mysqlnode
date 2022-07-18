@@ -11,9 +11,15 @@ function Navigation() {
                 <FaBloggerB className='logo' />
             </div>
             <button className="btn btn-login">
-            <Link to='/'>
+            <Link to='/login'>
             <BiLogIn className='btn-logo'/>
                 Login
+            </Link>
+            </button>
+            <button className='btn'>
+            <Link to='/signup'>
+            <BiLogIn className='btn-logo'/>
+                SingUp
             </Link>
             </button>
         </nav>
