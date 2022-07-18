@@ -67,7 +67,6 @@ style the form
 .form-image{
   width: 100%;
   border-radius: 6px;
-  filter: drop-shadow(5px 10px 5px #006c54);
 }
 .form-container{
   display: flex;

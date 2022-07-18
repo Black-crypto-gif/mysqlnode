@@ -1,11 +1,18 @@
 import React from 'react'
+import {useEffect} from 'react'
 import FormImg from '../assets/form-signin.png'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function SignUpForm() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div className='landing-form'>
+    <div className='landing-form' data-aos="flip-left">
         <img src={FormImg} alt="img" className='form-image' />
         <div className="form-container">
         <h2 className="form-title">

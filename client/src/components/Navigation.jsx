@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiLogIn } from 'react-icons/bi'
 import { FaBloggerB } from 'react-icons/fa'
+import { Outlet, Link } from 'react-router-dom'
 
 function Navigation() {
   return (
@@ -10,8 +11,10 @@ function Navigation() {
                 <FaBloggerB className='logo' />
             </div>
             <button className="btn btn-login">
-                <BiLogIn className='btn-logo'/>
+            <Link to='/'>
+            <BiLogIn className='btn-logo'/>
                 Login
+            </Link>
             </button>
         </nav>
     </header>
