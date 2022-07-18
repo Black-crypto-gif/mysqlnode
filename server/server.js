@@ -88,3 +88,25 @@ app.get('/insert', (req, res)=>{
         }
     });
 })
+// select from database :
+
+app.get('/select', (req, res)=>{
+    con.query("SELECT * FROM clients",(err, result, fields)=>{
+        if(err){
+            console.log(err.bgBlue);
+        }
+        console.table(result);
+        res.json(result);
+        // we can also select some data from result
+    })
+})
+app.get('/selectparams', (req, res)=>{
+    con.query("SELECT username, address FROM clients", (err, result, fields)=>{
+        if (err) throw err;
+        console.table(result);
+        //console.log(fields)
+        console.log(result[5].username)
+        res.json(fields)
+        
+    })
+})
