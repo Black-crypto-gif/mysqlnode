@@ -1,30 +1,43 @@
 import React from 'react'
-import { BiLogIn } from 'react-icons/bi'
-import { FaBloggerB } from 'react-icons/fa'
-import { Outlet, Link } from 'react-router-dom'
+import atom from '../assets/atom.png'
+import SignUpButton from './SignUpButton'
 
 function Navigation() {
-  return (
-    <header>
-        <nav>
-            <div className="logo">
-                <FaBloggerB className='logo' />
-            </div>
-            <button className="btn btn-login">
-            <Link to='/login'>
-            <BiLogIn className='btn-logo'/>
-                Login
-            </Link>
-            </button>
-            <button className='btn'>
-            <Link to='/signup'>
-            <BiLogIn className='btn-logo'/>
-                SingUp
-            </Link>
-            </button>
-        </nav>
-    </header>
-  )
+    return (
+        <>
+            <header>
+                <div className="logo">
+                    <img src={atom} alt="logo" className='logo-logo' />
+                    <span className="logo-text">
+                       Atomic
+                    </span>
+                </div>
+                <div className="nav" id='nav'>
+                    <div className="nav-items">
+                        <a href='#welcome-page'>
+                            Home
+                        </a>
+                    </div>
+                    <div className="nav-items">
+                        Blog
+                    </div>
+                    <p className="nav-items">
+                        <a href='#card-section'>
+                            Projects
+                        </a>
+                    </p>
+                    <div className="nav-items">
+                        About
+                    </div>
+                </div>
+                <div className="btn-header">
+                    <a href='#' className='contact'>Contact</a>
+                    <a href='#' className='login'>Login</a>
+                    <SignUpButton />
+                </div>
+            </header>
+        </>
+    )
 }
 
 export default Navigation

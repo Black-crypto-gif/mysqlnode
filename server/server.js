@@ -3,13 +3,16 @@ const cors = require('cors');
 require('dotenv').config();
 const colors = require('colors');
 const mysql = require('mysql');
-const routes = require('./route/routes');
 const { query } = require('express');
+const multer  = require('multer')
+
 
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // Used to parse JSON bodies
+
+app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies using qs library
 app.use(cors())
 app.use((req, res, next)=>{
     console.log(req.path.bgGreen , req.method.bgRed);
@@ -36,9 +39,7 @@ app.listen(process.env.PORT, (err) => {
     if(err) throw console.log(err);
     console.log(`SERVER LISTENING ON ${process.env.PORT}`.bgBlue);
 })
-//routes :
 
-app.get('/', routes);
 // Create database and check if it's exist before :
 app.get('/db', (req, res, next)=>{
     con.query("CREATE DATABASE users", function (err, result) {
@@ -110,3 +111,62 @@ app.get('/selectparams', (req, res)=>{
         
     })
 })
+
+// select With a Filter :
+app.get('/filter', (req, res, next)=> {
+
+con.query("SELECT * FROM clients WHERE address ='highwaytodsjennah'",(err, result)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log(result)
+    next();
+})
+})
+
+app.get('/filters', (req, res, next)=> {
+
+con.query("SELECT * FROM clients WHERE address  LIKE 'H%'",(err, result)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log(result)
+    res.json(result)
+    next();
+})
+})
+
+//Escaping Query Values :
+
+app.get('/query', (req, res, next)=>{
+    var username = 'FethiMellsal';
+    var address = 'highwaytodsjennah';
+    var sql = 'SELECT * FROM clients WHERE username = ? OR address = ?';
+    con.query(sql, [username, address], function (err, result) {
+      if (err) throw err;
+      console.log(result);
+      next();
+    });
+})
+
+app.post('/params', (req, res, next)=>{
+    const infos = {
+        username: req.body.username,
+        password: req.body.password,
+        address: req.body.address
+    }
+    console.log(infos)
+    const sql = "INSERT INTO clients SET ? "
+    con.query(sql, infos, (err, result)=>{
+        if(err){
+            console.table(err.bgYellow);
+            res.json({
+                "database" : "Nothing happend"
+            });
+        }else{
+            res.status(200).json(result);
+            console.log('Success'.bgGreen);
+        }
+    });
+})
+
