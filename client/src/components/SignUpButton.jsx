@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SignUpButton() {
   return (
-    <input type="button" value="Sing in" className='singin'/>
+    <Link to='/signup'>
+      <input type="button" value="Sign in" className='singin'/>
+    </Link>
   )
 }
 

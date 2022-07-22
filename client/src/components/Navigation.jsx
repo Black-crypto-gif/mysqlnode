@@ -1,8 +1,12 @@
 import React from 'react'
 import atom from '../assets/atom.png'
 import SignUpButton from './SignUpButton'
+import { Link } from 'react-router-dom'
+import LoginButton from './LoginButton'
+import LoginControl from './button'
 
 function Navigation() {
+    
     return (
         <>
             <header>
@@ -14,7 +18,7 @@ function Navigation() {
                 </div>
                 <div className="nav" id='nav'>
                     <div className="nav-items">
-                        <a href='#welcome-page'>
+                        <a href='/'>
                             Home
                         </a>
                     </div>
@@ -32,8 +36,8 @@ function Navigation() {
                 </div>
                 <div className="btn-header">
                     <a href='#' className='contact'>Contact</a>
-                    <a href='#' className='login'>Login</a>
-                    <SignUpButton />
+                    <LoginControl />
+                    
                 </div>
             </header>
         </>

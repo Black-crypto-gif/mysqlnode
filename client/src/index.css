@@ -174,3 +174,128 @@ span.add-content {
   height: auto;
   margin: 2rem auto;
 }
+
+/*
+*Login page style :
+*/
+.login-page-content {
+  max-width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  padding: 1.2rem;
+}
+
+.login-text {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  /* add the best text shadow*/
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: rgb(2, 0, 104);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+} 
+form.login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 3rem;
+  padding: 1rem;
+}
+.login-backup{
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.fa{
+  margin-right: 1rem;
+}
+.additional-links{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1rem;
+}
+#loginpage > div > div > form > div > a{
+  color: black;
+  border: 1px black solid;
+  ;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+}
+.active{
+  color: black;
+  font-weight: bold;
+}
+/*
+*Signup style :
+*/
+.signup-page-content {
+  max-width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  padding: 1.2rem;
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  /* add the best text shadow*/
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form.signup{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-left: 3rem;
+  padding: 1rem;
+}
+#root > header > div.btn-header > div > button{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: .9rem;
+  width: 125px;
+  border-radius: .5rem;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.8s;
+}
